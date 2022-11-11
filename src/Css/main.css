@@ -1,0 +1,118 @@
+@font-face {
+  font-family: "myfont";
+  src: url(Poppins-Medium.ttf);
+}
+* {
+  font-family: "myfont";
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+.hand {
+  cursor: pointer;
+}
+.header {
+  font-size: 0.8rem;
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  z-index: 100;
+}
+.head-logo {
+  width: auto;
+  height: 2rem;
+}
+.user-logo {
+  width: 1.5rem;
+}
+.head-input {
+  width: 6rem;
+}
+.week {
+  border-left: 1px solid rgb(199, 193, 193);
+  border-right: 1px solid rgb(199, 193, 193);
+}
+.hotel-types {
+  background-color: white;
+  margin-top: 0.8rem;
+  padding-top: 6rem;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+.hotel-type {
+  width: min-content;
+}
+.just-img {
+  width: 25rem;
+}
+.hotel-img {
+  height: 20vw;
+  object-fit: cover;
+}
+
+.fit-cover {
+  object-fit: cover;
+}
+.detail-pay {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 27%;
+  height: fit-content;
+}
+
+.calendar-head {
+  width: 14.28%;
+  color: rgb(131, 128, 128);
+}
+.calendar-num {
+  height: calc(100vw / 12 - 18.8px);
+  width: 14.28%;
+}
+.numbers-btn {
+  height: 100%;
+  width: 100%;
+  border: 0;
+  background-color: white;
+}
+.numbers-btn:hover {
+  border: 1px solid gray;
+}
+
+.numbers-btn:focus {
+  background-color: black;
+  color: white;
+}
+.map-container {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+.map-container iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+.image-set {
+  height: 28vw;
+}
+.big-img {
+  height: 100%;
+  object-fit: cover;
+}
+.small-img {
+  height: 50%;
+  object-fit: cover;
+}
+.inout-date {
+  font-size: smaller;
+  color: rgb(76, 75, 75);
+}
+.bg-date {
+  background-color: rgb(174, 171, 171);
+  color: white;
+}
