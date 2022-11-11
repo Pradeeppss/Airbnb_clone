@@ -8,7 +8,7 @@ function Homebody() {
   const [hotels, sethotels] = useState([]);
 
   let getallhotels = async () => {
-    let URI = "http://localhost:4004/getallhotels";
+    let URI = "https://airbnb-clone-api-pradeep.herokuapp.com/getallhotels";
     let { data } = await axios.get(URI);
     // console.log(data);
     sethotels([...data.result]);
