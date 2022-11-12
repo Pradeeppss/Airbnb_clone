@@ -37,7 +37,6 @@ function Details() {
         startdate.month - 1,
         startdate.day + numofdays
       );
-
       if (
         d.getFullYear() === enddate.year &&
         d.getMonth() === enddate.month - 1 &&
@@ -49,7 +48,7 @@ function Details() {
         settotalnights([...output]);
         setdisabled(false);
       }
-      //failsafe
+      // failsafe
       // else if (numofdays > 50) {
       //   equality = false;
       //   console.log("bad end");
@@ -60,7 +59,6 @@ function Details() {
   let getcalendardata = (calendardata) => {
     let clicknum = numofclick;
     clicknum += 1;
-    // let extrdays = extrmonth
 
     if (clicknum % 2 === 0) {
       setbgoutdate("");
@@ -119,30 +117,37 @@ function Details() {
           setbgindate(" bg-date ");
         }
       } else {
-        if (
-          calendardata.year >= today.year &&
-          calendardata.year < outdate.year
-        ) {
+        if (calendardata.year < outdate.year) {
           setnumofclick(clicknum);
           setindate({ ...calendardata });
           getdaysinbetween(calendardata, outdate);
         } else if (
-          calendardata.year >= today.year &&
-          calendardata.month >= today.month &&
+          calendardata.year === outdate.year &&
           calendardata.month < outdate.month
         ) {
           setnumofclick(clicknum);
           setindate({ ...calendardata });
           getdaysinbetween(calendardata, outdate);
         } else if (
-          calendardata.year >= today.year &&
-          calendardata.month >= today.month &&
-          calendardata.day > today.day &&
+          calendardata.year === outdate.year &&
+          calendardata.month === outdate.month &&
           calendardata.day < outdate.day
         ) {
-          setnumofclick(clicknum);
-          setindate({ ...calendardata });
-          getdaysinbetween(calendardata, outdate);
+          if (
+            calendardata.year === today.year &&
+            calendardata.month === today.month &&
+            calendardata.day <= today.day
+          ) {
+            setindate({});
+            setdisabled(true);
+            settotalnights([0, 0, 0]);
+            setbgoutdate("");
+            setbgindate(" bg-date ");
+          } else {
+            setnumofclick(clicknum);
+            setindate({ ...calendardata });
+            getdaysinbetween(calendardata, outdate);
+          }
         } else {
           setindate({});
           setdisabled(true);
