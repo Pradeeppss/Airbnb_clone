@@ -18,9 +18,7 @@ function Details() {
   const { state } = useLocation();
 
   let gethoteldetail = async () => {
-    let URI =
-      "https://airbnb-clone-api-pradeep.herokuapp.com/gethoteldetail/" +
-      state.output;
+    let URI = "https://airbnbapp.up.railway.app/gethoteldetail/" + state.output;
     let { data } = await axios.get(URI);
     let output = data.result;
     setimageset([...data.result.hotelimg]);
@@ -177,7 +175,7 @@ function Details() {
     }
     var orderData = { total: totalnights[2] };
     var { data } = await axios.post(
-      "https://airbnb-clone-api-pradeep.herokuapp.com/getpaymentid",
+      "https://airbnbapp.up.railway.app/getpaymentid",
       orderData
     );
     var { order } = data;
@@ -197,7 +195,7 @@ function Details() {
           signature: response.razorpay_signature,
         };
         var { data } = await axios.post(
-          "https://airbnb-clone-api-pradeep.herokuapp.com/verifypayment",
+          "https://airbnbapp.up.railway.app/verifypayment",
           sendData
         );
         if (data.status === true) {
